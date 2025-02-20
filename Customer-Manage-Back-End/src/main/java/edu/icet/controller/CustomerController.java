@@ -3,6 +3,7 @@ package edu.icet.controller;
 import edu.icet.dto.Customer;
 import edu.icet.service.CustomerService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,5 +33,10 @@ public class CustomerController {
         service.deleteCustomer(id);
     }
 
+    @PutMapping("/update-customer")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public void updateCustomer(@RequestBody Customer customer){
+        service.updateCustomer(customer);
+    }
 
 }
