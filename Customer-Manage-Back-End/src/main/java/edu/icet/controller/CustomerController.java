@@ -11,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/customer")
 @RequiredArgsConstructor
+@CrossOrigin
 
 public class CustomerController {
     // http://localhost:8080/customer/add
