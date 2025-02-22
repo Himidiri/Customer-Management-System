@@ -18,6 +18,7 @@ public class CustomerController {
     final CustomerService service;
 
     @PostMapping("/add")
+    @ResponseStatus(HttpStatus.CREATED)
     public void addCustomer(@RequestBody Customer customer) {
         service.addCustomer(customer);
         System.out.println(customer);
