@@ -33,6 +33,12 @@ function loadCustomer() {
         })
 }
 
+function addCustomerClick() {
+    document.getElementById("txtName").value = "";
+    document.getElementById("txtAddress").value = "";
+    document.getElementById("txtSalary").value = "";
+}
+
 function addCustomer() {
     let name = document.getElementById("txtName").value;
     let address = document.getElementById("txtAddress").value;
@@ -68,6 +74,8 @@ function addCustomer() {
             console.log(result);
             
             alert("Customer added successfully!");
+
+            location.reload();
             
             document.getElementById("txtName").value = "";
             document.getElementById("txtAddress").value = "";
