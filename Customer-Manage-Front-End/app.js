@@ -83,3 +83,29 @@ function addCustomer() {
         })
         .catch((error) => console.error(error));
 }
+
+function deleteCustomerClick() {
+    document.getElementById("customerID").value = "";
+}
+
+function searchCustomerByID() {
+    let searchValue = document.getElementById("customerID").value;
+
+    const requestOptions = {
+        method: "GET",
+        redirect: "follow"
+    };
+
+    fetch("http://localhost:8080/customer/search-by-id/" + searchValue, requestOptions)
+        .then((response) => response.json())
+        .then((result) => {
+            let id = document.getElementById("id").value = searchValue;
+            let name = document.getElementById("name").value = result.name;
+            let address = document.getElementById("address").value = result.address;
+            let salary = document.getElementById("salary").value = result.salary;
+
+            deleteCustomerClick();
+        })
+        .catch((error) => console.error(error));
+}
+
