@@ -13,7 +13,7 @@
     <h1 class="bg-black text-white p-3 text-center mb-5">2025 Customer Manage System</h1>
     <div class="m-auto w-75 text-center mb-5">
         <button class="btn btn-success m-3" data-bs-toggle="modal" data-bs-target="#addCustomerModel" onclick="addCustomerClick()">Add Customer</button>
-        <button class="btn btn-danger m-3">Delete Customer</button>
+        <button class="btn btn-danger m-3" data-bs-toggle="modal" data-bs-target="#deleteCustomerModel">Delete Customer</button>
         <button class="btn btn-warning m-3">Update Customer</button>
         <button class="btn btn-info m-3">Search Customer</button>
     </div>
@@ -44,12 +44,57 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
                     <button type="button" value="Add" class="btn btn-success" onclick="addCustomer()">Add</button>
                 </div>
             </div>
         </div>
     </div>
+
+     <!-- Delete Customer Model -->
+     <div class="modal fade" id="deleteCustomerModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="deleteCustomerModelLabel" aria-hidden="true">
+     <div class="modal-dialog">
+         <div class="modal-content bg-dark text-white">
+             <div class="modal-header">
+                 <h1 class="modal-title fs-5" id="deleteCustomerModelLabel">Delete Customer</h1>
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+             </div>
+             <div class="modal-body">
+                <form>
+                    <div class="mb-3 input-group">
+                        <input class="form-control me-2" type="search" placeholder="Enter Customer ID" aria-label="Search">
+                        <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#showData" aria-expanded="false" aria-controls="showData">Search</button>
+                    </div>
+                    <div class="collapse" id="showData">
+                        <div class="card card-body bg-dark text-white">
+                            <div class="mb-3">
+                                <label for="customerID" class="form-label">Customer ID :</label>
+                                <input type="text" class="form-control" id="customerID" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="updateName" class="form-label">Customer Name :</label>
+                                <input type="text" class="form-control" id="updateName" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="updateAddress" class="form-label">Address :</label>
+                                <input type="text" class="form-control" id="updateAddress" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="updateSalary" class="form-label">Salary :</label>
+                                <input type="number" class="form-control" id="updateSalary" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+             </div>
+             <div class="modal-footer">
+                 <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+                 <button type="button" value="Add" class="btn btn-danger" onclick="deleteCustomer()">Delete</button>
+             </div>
+         </div>
+     </div>
+ </div>
 
     <table id="tblCustomers" class="table table-hover table-secondary w-75 text-center m-auto"></table>
 
