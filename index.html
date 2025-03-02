@@ -18,7 +18,7 @@
         <button class="btn btn-danger m-3" data-bs-toggle="modal" data-bs-target="#deleteCustomerModel"
             onclick="deleteCustomerClick()">Delete Customer</button>
         <button class="btn btn-warning m-3" data-bs-toggle="modal" data-bs-target="#updateCustomerModel"
-        onclick="updateCustomerClick()">Update Customer</button>
+            onclick="updateCustomerClick()">Update Customer</button>
         <button class="btn btn-info m-3">Search Customer</button>
     </div>
 
@@ -62,7 +62,8 @@
             <div class="modal-content bg-dark text-white">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="deleteCustomerModelLabel">Delete Customer</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="closeClear()"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        onclick="closeClearDelete()"></button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -71,7 +72,7 @@
                                 aria-label="Search" id="customerID">
                             <button class="btn btn-success" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#showData" aria-expanded="false" aria-controls="showData"
-                                onclick="searchCustomerByID()">Search</button>
+                                onclick="searchCustomerByIDForDelete()">Search</button>
                         </div>
                         <div class="collapse" id="showData">
                             <div class="card card-body bg-dark text-white">
@@ -96,7 +97,8 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal" onclick="closeClear()">Close</button>
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"
+                        onclick="closeClearDelete()">Close</button>
                     <button type="button" value="Add" class="btn btn-danger" onclick="deleteCustomer()">Delete</button>
                 </div>
             </div>
@@ -110,41 +112,41 @@
             <div class="modal-content bg-dark text-white">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="updateCustomerModelLabel">Update Customer</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="closeClearUpdate()"></button>
                 </div>
                 <div class="modal-body">
                     <form>
                         <div class="mb-3 input-group">
                             <input class="form-control me-2" type="search" placeholder="Enter Customer ID"
-                                aria-label="Search" id="customerID">
+                                aria-label="Search" id="customerId">
                             <button class="btn btn-success" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#showData" aria-expanded="false" aria-controls="showData"
-                                onclick="searchCustomerByID()">Search</button>
+                                data-bs-target="#showDataUpdate" aria-expanded="false" aria-controls="showDataUpdate"
+                                onclick="searchCustomerByIDForUpdate()">Search</button>
                         </div>
-                        <div class="collapse" id="showData">
+                        <div class="collapse" id="showDataUpdate">
                             <div class="card card-body bg-dark text-white">
                                 <div class="mb-3">
                                     <label for="id" class="form-label">Customer ID :</label>
-                                    <input type="text" class="form-control" id="id" readonly>
+                                    <input type="text" class="form-control" id="updateID" readonly>
                                 </div>
                                 <div class="mb-3">
                                     <label for="updateName" class="form-label">Customer Name :</label>
-                                    <input type="text" class="form-control" id="name">
+                                    <input type="text" class="form-control" id="updateName">
                                 </div>
                                 <div class="mb-3">
                                     <label for="updateAddress" class="form-label">Address :</label>
-                                    <input type="text" class="form-control" id="address">
+                                    <input type="text" class="form-control" id="updateAddress">
                                 </div>
                                 <div class="mb-3">
                                     <label for="updateSalary" class="form-label">Salary :</label>
-                                    <input type="number" class="form-control" id="salary">
+                                    <input type="number" class="form-control" id="updateSalary">
                                 </div>
                             </div>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal" onclick="closeClearUpdate()">Close</button>
                     <button type="button" value="Add" class="btn btn-warning" onclick="updateCustomer()">Update</button>
                 </div>
             </div>

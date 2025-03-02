@@ -88,7 +88,7 @@ function deleteCustomerClick() {
     document.getElementById("customerID").value = "";
 }
 
-function searchCustomerByID() {
+function searchCustomerByIDForDelete() {
     let searchValue = document.getElementById("customerID").value;
 
     const requestOptions = {
@@ -135,9 +135,41 @@ function deleteCustomer() {
         .catch((error) => console.error(error));
 }
 
-function closeClear() {
+function closeClearDelete() {
     document.getElementById("id").value = "";
     document.getElementById("name").value = "";
     document.getElementById("address").value = "";
     document.getElementById("salary").value = "";
+}
+
+function updateCustomerClick(){
+    document.getElementById("customerId").value = "";
+}
+
+function searchCustomerByIDForUpdate() {
+    let searchValue = document.getElementById("customerId").value;
+
+    const requestOptions = {
+        method: "GET",
+        redirect: "follow"
+    };
+
+    fetch("http://localhost:8080/customer/search-by-id/" + searchValue, requestOptions)
+        .then((response) => response.json())
+        .then((result) => {
+            let id = document.getElementById("updateID").value = searchValue;
+            let name = document.getElementById("updateName").value = result.name;
+            let address = document.getElementById("updateAddress").value = result.address;
+            let salary = document.getElementById("updateSalary").value = result.salary;
+
+            updateCustomerClick();
+        })
+        .catch((error) => console.error(error));
+}
+
+function closeClearUpdate() {
+    document.getElementById("updateID").value = "";
+    document.getElementById("updateName").value = "";
+    document.getElementById("updateAddress").value = "";
+    document.getElementById("updateSalary").value = "";
 }
