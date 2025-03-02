@@ -62,7 +62,7 @@
             <div class="modal-content bg-dark text-white">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="deleteCustomerModelLabel">Delete Customer</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="closeClear()"></button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -96,7 +96,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal" onclick="closeClear()">Close</button>
                     <button type="button" value="Add" class="btn btn-danger" onclick="deleteCustomer()">Delete</button>
                 </div>
             </div>

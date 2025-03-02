@@ -52,7 +52,7 @@ function addCustomer() {
     console.log(name);
     console.log(address);
     console.log(salary);
-    
+
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -67,16 +67,16 @@ function addCustomer() {
         headers: myHeaders,
         body: raw,
     };
-    
+
     fetch("http://localhost:8080/customer/add", requestOptions)
         .then((response) => response.text())
         .then((result) => {
             console.log(result);
-            
+
             alert("Customer added successfully!");
 
             location.reload();
-            
+
             document.getElementById("txtName").value = "";
             document.getElementById("txtAddress").value = "";
             document.getElementById("txtSalary").value = "";
@@ -110,7 +110,7 @@ function searchCustomerByID() {
 }
 
 function deleteCustomer() {
-    
+
     let idValue = document.getElementById("id").value;
 
     const requestOptions = {
@@ -133,4 +133,11 @@ function deleteCustomer() {
             document.getElementById("salary").value = "";
         })
         .catch((error) => console.error(error));
+}
+
+function closeClear() {
+    document.getElementById("id").value = "";
+    document.getElementById("name").value = "";
+    document.getElementById("address").value = "";
+    document.getElementById("salary").value = "";
 }
