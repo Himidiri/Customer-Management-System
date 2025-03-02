@@ -109,3 +109,24 @@ function searchCustomerByID() {
         .catch((error) => console.error(error));
 }
 
+function deleteCustomer() {
+    
+    let idValue = document.getElementById("id").value;
+
+    const requestOptions = {
+        method: "DELETE",
+        redirect: "follow"
+    };
+
+    fetch("http://localhost:8080/customer/delete/" + idValue, requestOptions)
+        .then((response) => response.text())
+        .then((result) => {
+            console.log(result)
+
+            alert("Customer Deleted Success")
+
+            location.reload();
+
+        })
+        .catch((error) => console.error(error));
+}
