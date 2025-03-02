@@ -127,6 +127,10 @@ function deleteCustomer() {
 
             location.reload();
 
+            document.getElementById("id").value = "";
+            document.getElementById("name").value = "";
+            document.getElementById("address").value = "";
+            document.getElementById("salary").value = "";
         })
         .catch((error) => console.error(error));
 }
