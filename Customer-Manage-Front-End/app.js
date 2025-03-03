@@ -33,12 +33,7 @@ function loadCustomer() {
         })
 }
 
-function addCustomerClick() {
-    document.getElementById("txtName").value = "";
-    document.getElementById("txtAddress").value = "";
-    document.getElementById("txtSalary").value = "";
-}
-
+// Add New Customer
 function addCustomer() {
     let name = document.getElementById("txtName").value;
     let address = document.getElementById("txtAddress").value;
@@ -82,10 +77,13 @@ function addCustomer() {
         .catch((error) => console.error(error));
 }
 
-function deleteCustomerClick() {
-    document.getElementById("customerID").value = "";
+function addCustomerClick() {
+    document.getElementById("txtName").value = "";
+    document.getElementById("txtAddress").value = "";
+    document.getElementById("txtSalary").value = "";
 }
 
+// Delete Customer by ID
 function searchCustomerByIDForDelete() {
     let searchValue = document.getElementById("customerID").value;
 
@@ -107,13 +105,6 @@ function searchCustomerByIDForDelete() {
         .catch((error) => console.error(error));
 }
 
-function closeClearDelete() {
-    document.getElementById("id").value = "";
-    document.getElementById("name").value = "";
-    document.getElementById("address").value = "";
-    document.getElementById("salary").value = "";
-}
-
 function deleteCustomer() {
 
     let idValue = document.getElementById("id").value;
@@ -130,17 +121,25 @@ function deleteCustomer() {
 
             alert("Customer Deleted Success")
 
-            loadCustomer(); 
+            loadCustomer();
 
             closeClearDelete();
         })
         .catch((error) => console.error(error));
 }
 
-function updateCustomerClick(){
-    document.getElementById("customerId").value = "";
+function deleteCustomerClick() {
+    document.getElementById("customerID").value = "";
 }
 
+function closeClearDelete() {
+    document.getElementById("id").value = "";
+    document.getElementById("name").value = "";
+    document.getElementById("address").value = "";
+    document.getElementById("salary").value = "";
+}
+
+// Update Customer
 function searchCustomerByIDForUpdate() {
     let searchValue = document.getElementById("customerId").value;
 
@@ -162,14 +161,6 @@ function searchCustomerByIDForUpdate() {
         .catch((error) => console.error(error));
 }
 
-function closeClearUpdate() {
-    document.getElementById("updateID").value = "";
-    document.getElementById("updateName").value = "";
-    document.getElementById("updateAddress").value = "";
-    document.getElementById("updateSalary").value = "";
-}
-
-// Update Customer
 function updateCustomer() {
     let id = document.getElementById("updateID").value;
     let name = document.getElementById("updateName").value;
@@ -191,10 +182,21 @@ function updateCustomer() {
 
             alert("Customer Updated Successfully!");
 
-            loadCustomer(); 
-            
+            loadCustomer();
+
             closeClearUpdate()
-            
+
         })
         .catch((error) => console.error(error));
+}
+
+function updateCustomerClick() {
+    document.getElementById("customerId").value = "";
+}
+
+function closeClearUpdate() {
+    document.getElementById("updateID").value = "";
+    document.getElementById("updateName").value = "";
+    document.getElementById("updateAddress").value = "";
+    document.getElementById("updateSalary").value = "";
 }
