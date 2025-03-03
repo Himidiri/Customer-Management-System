@@ -95,10 +95,10 @@ function searchCustomerByIDForDelete() {
     fetch("http://localhost:8080/customer/search-by-id/" + searchValue, requestOptions)
         .then((response) => response.json())
         .then((result) => {
-            let id = document.getElementById("id").value = searchValue;
-            let name = document.getElementById("name").value = result.name;
-            let address = document.getElementById("address").value = result.address;
-            let salary = document.getElementById("salary").value = result.salary;
+            let id = document.getElementById("deleteID").value = searchValue;
+            let name = document.getElementById("deleteName").value = result.name;
+            let address = document.getElementById("deleteAddress").value = result.address;
+            let salary = document.getElementById("deleteSalary").value = result.salary;
 
             deleteCustomerClick();
         })
@@ -107,7 +107,7 @@ function searchCustomerByIDForDelete() {
 
 function deleteCustomer() {
 
-    let idValue = document.getElementById("id").value;
+    let idValue = document.getElementById("deleteID").value;
 
     const requestOptions = {
         method: "DELETE",
@@ -133,10 +133,10 @@ function deleteCustomerClick() {
 }
 
 function closeClearDelete() {
-    document.getElementById("id").value = "";
-    document.getElementById("name").value = "";
-    document.getElementById("address").value = "";
-    document.getElementById("salary").value = "";
+    document.getElementById("deleteID").value = "";
+    document.getElementById("deleteName").value = "";
+    document.getElementById("deleteAddress").value = "";
+    document.getElementById("deleteSalary").value = "";
 }
 
 // Update Customer
