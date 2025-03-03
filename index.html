@@ -19,7 +19,8 @@
             onclick="deleteCustomerClick()">Delete Customer</button>
         <button class="btn btn-warning m-3" data-bs-toggle="modal" data-bs-target="#updateCustomerModel"
             onclick="updateCustomerClick()">Update Customer</button>
-        <button class="btn btn-info m-3">Search Customer</button>
+        <button class="btn btn-info m-3" data-bs-toggle="modal" data-bs-target="#searchCustomerModel"
+        onclick="searchCustomerClick()">Search Customer</button>
     </div>
 
     <!-- Add Customer Model -->
@@ -152,6 +153,56 @@
             </div>
         </div>
     </div>
+
+     <!-- Search Customer Model -->
+     <div class="modal fade" id="searchCustomerModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="searchCustomerModelLabel" aria-hidden="true">
+     <div class="modal-dialog">
+         <div class="modal-content bg-dark text-white">
+             <div class="modal-header">
+                 <h1 class="modal-title fs-5" id="searchCustomerModelLabel">Search Customer</h1>
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                     onclick="closeClearSearch()"></button>
+             </div>
+             <div class="modal-body">
+                 <form>
+                     <div class="mb-3 input-group">
+                         <input class="form-control me-2" type="search" placeholder="Enter Customer ID"
+                             aria-label="Search" id="customerID">
+                         <button class="btn btn-success" type="button" data-bs-toggle="collapse"
+                             data-bs-target="#showData" aria-expanded="false" aria-controls="showData"
+                             onclick="searchCustomerByID()">Search</button>
+                     </div>
+                     <div class="collapse" id="showData">
+                         <div class="card card-body bg-dark text-white">
+                             <div class="mb-3">
+                                 <label for="id" class="form-label">Customer ID :</label>
+                                 <input type="text" class="form-control" id="id" readonly>
+                             </div>
+                             <div class="mb-3">
+                                 <label for="updateName" class="form-label">Customer Name :</label>
+                                 <input type="text" class="form-control" id="name" readonly>
+                             </div>
+                             <div class="mb-3">
+                                 <label for="updateAddress" class="form-label">Address :</label>
+                                 <input type="text" class="form-control" id="address" readonly>
+                             </div>
+                             <div class="mb-3">
+                                 <label for="updateSalary" class="form-label">Salary :</label>
+                                 <input type="number" class="form-control" id="salary" readonly>
+                             </div>
+                         </div>
+                     </div>
+                 </form>
+             </div>
+             <div class="modal-footer">
+                 <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"
+                     onclick="closeClearSearch()">Close</button>
+                 <button type="button" value="Add" class="btn btn-info" onclick="searchCustomer()">Search</button>
+             </div>
+         </div>
+     </div>
+ </div>
 
     <table id="tblCustomers" class="table table-hover table-secondary w-75 text-center m-auto"></table>
 
