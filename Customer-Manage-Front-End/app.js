@@ -73,13 +73,11 @@ function addCustomer() {
         .then((result) => {
             console.log(result);
 
-            alert("Customer added successfully!");
+            alert("Customer Added Successfully!");
 
-            location.reload();
+            loadCustomer();
 
-            document.getElementById("txtName").value = "";
-            document.getElementById("txtAddress").value = "";
-            document.getElementById("txtSalary").value = "";
+            addCustomerClick();
         })
         .catch((error) => console.error(error));
 }
@@ -109,6 +107,13 @@ function searchCustomerByIDForDelete() {
         .catch((error) => console.error(error));
 }
 
+function closeClearDelete() {
+    document.getElementById("id").value = "";
+    document.getElementById("name").value = "";
+    document.getElementById("address").value = "";
+    document.getElementById("salary").value = "";
+}
+
 function deleteCustomer() {
 
     let idValue = document.getElementById("id").value;
@@ -125,21 +130,11 @@ function deleteCustomer() {
 
             alert("Customer Deleted Success")
 
-            location.reload();
+            loadCustomer(); 
 
-            document.getElementById("id").value = "";
-            document.getElementById("name").value = "";
-            document.getElementById("address").value = "";
-            document.getElementById("salary").value = "";
+            closeClearDelete();
         })
         .catch((error) => console.error(error));
-}
-
-function closeClearDelete() {
-    document.getElementById("id").value = "";
-    document.getElementById("name").value = "";
-    document.getElementById("address").value = "";
-    document.getElementById("salary").value = "";
 }
 
 function updateCustomerClick(){
@@ -172,4 +167,34 @@ function closeClearUpdate() {
     document.getElementById("updateName").value = "";
     document.getElementById("updateAddress").value = "";
     document.getElementById("updateSalary").value = "";
+}
+
+// Update Customer
+function updateCustomer() {
+    let id = document.getElementById("updateID").value;
+    let name = document.getElementById("updateName").value;
+    let address = document.getElementById("updateAddress").value;
+    let salary = document.getElementById("updateSalary").value;
+
+    if (!confirm("Are you sure you want to update this customer?")) return;
+
+    const requestOptions = {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id, name, address, salary })
+    };
+
+    fetch("http://localhost:8080/customer/update-customer", requestOptions)
+        .then(response => response.text())
+        .then(result => {
+            console.log(result);
+
+            alert("Customer Updated Successfully!");
+
+            loadCustomer(); 
+            
+            closeClearUpdate()
+            
+        })
+        .catch((error) => console.error(error));
 }
