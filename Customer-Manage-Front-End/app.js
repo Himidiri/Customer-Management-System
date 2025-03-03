@@ -200,3 +200,36 @@ function closeClearUpdate() {
     document.getElementById("updateAddress").value = "";
     document.getElementById("updateSalary").value = "";
 }
+
+// Search Customer by ID
+function searchCustomerByID() {
+    let searchValue = document.getElementById("searchCustomerID").value;
+
+    const requestOptions = {
+        method: "GET",
+        redirect: "follow"
+    };
+
+    fetch("http://localhost:8080/customer/search-by-id/" + searchValue, requestOptions)
+        .then((response) => response.json())
+        .then((result) => {
+            let id = document.getElementById("searchID").value = searchValue;
+            let name = document.getElementById("searchName").value = result.name;
+            let address = document.getElementById("searchAddress").value = result.address;
+            let salary = document.getElementById("searchSalary").value = result.salary;
+
+            searchCustomerClick();
+        })
+        .catch((error) => console.error(error));
+}
+
+function searchCustomerClick() {
+    document.getElementById("searchCustomerID").value = "";
+}
+
+function closeClearSearch() {
+    document.getElementById("searchID").value = "";
+    document.getElementById("searchName").value = "";
+    document.getElementById("searchAddress").value = "";
+    document.getElementById("searchSalary").value = "";
+}

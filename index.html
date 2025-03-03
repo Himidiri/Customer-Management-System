@@ -168,28 +168,28 @@
                  <form>
                      <div class="mb-3 input-group">
                          <input class="form-control me-2" type="search" placeholder="Enter Customer ID"
-                             aria-label="Search" id="customerID">
+                             aria-label="Search" id="searchCustomerID">
                          <button class="btn btn-success" type="button" data-bs-toggle="collapse"
-                             data-bs-target="#showData" aria-expanded="false" aria-controls="showData"
+                             data-bs-target="#showSearchData" aria-expanded="false" aria-controls="showSearchData"
                              onclick="searchCustomerByID()">Search</button>
                      </div>
-                     <div class="collapse" id="showData">
+                     <div class="collapse" id="showSearchData">
                          <div class="card card-body bg-dark text-white">
                              <div class="mb-3">
-                                 <label for="id" class="form-label">Customer ID :</label>
-                                 <input type="text" class="form-control" id="id" readonly>
+                                 <label for="searchID" class="form-label">Customer ID :</label>
+                                 <input type="text" class="form-control" id="searchID" readonly>
                              </div>
                              <div class="mb-3">
-                                 <label for="updateName" class="form-label">Customer Name :</label>
-                                 <input type="text" class="form-control" id="name" readonly>
+                                 <label for="searchName" class="form-label">Customer Name :</label>
+                                 <input type="text" class="form-control" id="searchName" readonly>
                              </div>
                              <div class="mb-3">
-                                 <label for="updateAddress" class="form-label">Address :</label>
-                                 <input type="text" class="form-control" id="address" readonly>
+                                 <label for="searchAddress" class="form-label">Address :</label>
+                                 <input type="text" class="form-control" id="searchAddress" readonly>
                              </div>
                              <div class="mb-3">
-                                 <label for="updateSalary" class="form-label">Salary :</label>
-                                 <input type="number" class="form-control" id="salary" readonly>
+                                 <label for="searchSalary" class="form-label">Salary :</label>
+                                 <input type="number" class="form-control" id="searchSalary" readonly>
                              </div>
                          </div>
                      </div>
@@ -198,7 +198,6 @@
              <div class="modal-footer">
                  <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"
                      onclick="closeClearSearch()">Close</button>
-                 <button type="button" value="Add" class="btn btn-info" onclick="searchCustomer()">Search</button>
              </div>
          </div>
      </div>
