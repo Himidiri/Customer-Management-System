@@ -1,5 +1,5 @@
 # Customer Management System
-The **Customer Management** System is a web application for managing customer records, including adding, updating, deleting, and searching customers. It is built with Java **Spring Boot** for the backend and **HTML, Bootstrap, and JavaScript** for the frontend.
+The **Customer Management System** is a web application for managing customer records, including adding, updating, deleting, and searching customers. It is built with Java **Spring Boot** for the backend and **HTML, Bootstrap, and JavaScript** for the frontend.
 
 ## Features
 - Add New Customers
